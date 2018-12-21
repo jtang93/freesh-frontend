@@ -1,10 +1,21 @@
 import React, { Component } from 'react';
 
 const Login = props => {
+
+  const loginHandler = (e) => {
+    e.preventDefault()
+    fetch('http://localhost:3000/api/v1/profile', {
+      method: 'GET',
+      headers: {
+        Authorization: `Bearer <token>`
+      }
+    })
+  }
+
   return (
-    <div>
+    <div className="Container">
       Login
-      <form>
+      <form onSubmit = {(e) => {loginHandler(e)}}>
         <label>
           Username:
           <input type="text" name="username" />
