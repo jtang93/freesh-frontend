@@ -1,5 +1,9 @@
-.App {
+.Container {
   text-align: center;
+}
+
+.navbarContainer{
+  margin: 0;
 }
 
 .App-logo {
