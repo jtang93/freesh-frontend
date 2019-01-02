@@ -12,7 +12,7 @@ const Signup = props => {
       },
       body: JSON.stringify({
         user: {
-          username: 'eaeag',
+          username: 'asdfasdf',
           password: 'hi',
           bio: 'King of Flavortown, USA',
           avatar: 'https://upload.wikimedia.org/wikipedia/commons/9/9a/Guy_Fieri_at_Guantanamo_2.jpg'

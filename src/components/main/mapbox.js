@@ -24,19 +24,11 @@ componentDidMount() {
     console.log(this.state.geojson)
 
     this.state.geojson.map(listing => {
-      geocodingClient
-      .forwardGeocode({
-        query: `${listing.location}`,
-        limit: 1
-      })
-      .send()
-      .then(response => {
-        const match = response.body.features[0].center;
         let locations = this.state.locations
-        this.setState({locations: [...locations, match]})
-        console.log(locations)
-      });
+        let coordinates = listing.coordinates.split(",").map(n => parseFloat(n))
+        this.setState({locations: [...locations, coordinates]})
     })
+    console.log("locations", this.state.locations)
   })
 }
 
@@ -51,21 +43,24 @@ makeFeatures = () => {
 render() {
   return (
     <div>
-    <Map
-    style="mapbox://styles/mapbox/streets-v9"
-    center={[-74.0060, 40.7128]}
-    containerStyle={{
-      height: "100vh",
-      width: "100vw"
-    }}>
-    <Layer
-    type="symbol"
-    id="marker"
-    layout={{ "icon-image": "rocket-15" }}>
-    {this.makeFeatures()}
-    </Layer>
+      <Map
+      style="mapbox://styles/mapbox/streets-v9"
+      center={[-74.0060, 40.7128]}
+      containerStyle={{
+        height: "100vh",
+        width: "100vw"
+      }}>
 
-    </Map>
+        <Layer
+        type="symbol"
+        id="marker"
+        layout={{ "icon-image": "rocket-15" }}>
+
+          {this.makeFeatures()}
+
+        </Layer>
+
+      </Map>
 
 
     </div>

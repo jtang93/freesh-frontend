@@ -6,8 +6,8 @@ const Main = props => {
 
   return(
     <div>
-    <TopNav />
-    <Map />
+      <TopNav />
+      <Map />
     </div>
   )
 
