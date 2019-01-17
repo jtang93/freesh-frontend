@@ -12,3 +12,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+input{
+  border-radius: 3px
+}
+
+.mapboxgl-canvas{
+  position: absolute;
+  top: 0px;
+}
+
+.navbarContainer{
+  border-radius: 0px;
+  display: flex;
+  z-index: 99;
+}
+
+.navBarBtn {
+  border: 0;
+  margin: 9px;
+}
+
+.navFilter{
+  margin: 7px
+}
+
+.popupImage {
+  display: block;
+  max-width: 200px;
+  max-height: 200px;
+  width: auto;
+  height: auto;
+  border-radius: 25px;
+}
+
+.popupForm {
+  position: absolute;
+  top: 52px;
+  right: 395px;
+  height: auto;
+  width: 220px;
+  z-index: 99;
+  background: #5bc0de;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.cardsContainer {
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  width: auto;
+  z-index: 98;
+  background: #5bc0de;
+  padding: 15px;
+  overflow-y: scroll;
+  padding-top: 52px;
+}
+.listingCard {
+background: white;
+border-radius: 5px;
+padding: 5px;
+margin: 5px
+}

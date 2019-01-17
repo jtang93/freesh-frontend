@@ -8,20 +8,19 @@ import * as serviceWorker from './serviceWorker';
 import { BrowserRouter as Router } from 'react-router-dom'
 import { combineReducers, createStore } from 'redux'
 // import store from './reducers/store'
-import productsReducer from './reducers/productsReducer'
+import listingsReducer from './reducers/listingsReducer'
 import usersReducer from './reducers/usersReducer'
 
 
 const allReducers = combineReducers({
-  products: productsReducer,
+  listings: listingsReducer,
   user: usersReducer
 })
 
 const store = createStore(
   allReducers,
   {
-    products: [{name: 'iPhone'}],
-    user: 'Michael'
+    user: 'Michael',
   },
   window.devToolsExtension && window.devToolsExtension()
   )
@@ -36,6 +35,7 @@ const updateUserAction = {
 }
 
 store.dispatch(updateUserAction)
+console.log(store.getState())
 
 ReactDOM.render(
   <Provider store={store}>

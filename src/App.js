@@ -8,7 +8,7 @@ import TopNav from './components/main/navbar'
 import Main from './components/main/main'
 import './App.css';
 import { connect } from 'react-redux'
-import { updateUser } from './actions/usersActions'
+// import { updateUser } from './actions/usersActions'
 
 class App extends Component {
   render() {
